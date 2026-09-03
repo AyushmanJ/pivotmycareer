@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pivot My Career — Professional Career Pivot Architecture</title>
+  <meta name="description" content="A clinical 3-tier career transition platform for working professionals: Free AI Diagnostic, ₹1,999 Psychometric & Capability Audit, and ₹5,999 1-on-1 Senior Consultant Advisory.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation (Crisp & White) -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-icon">🧭</div>
+        <div class="brand-text">Pivot My<span>Career</span></div>
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#diagnostic-section" class="nav-link">Free Diagnostic</a></li>
+          <li><a href="#pricing-section" class="nav-link">Plans &amp; Pricing</a></li>
+          <li><a href="#consultants-section" class="nav-link">Career Consultants</a></li>
+          <li><a href="#sample-report-anchor" class="nav-link">Sample Report</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="#pricing-section" class="btn btn-secondary btn-sm">View Plans</a>
+        <a href="#diagnostic-section" class="btn btn-primary btn-sm">Start Free Diagnostic →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Persona Switcher Bar (Clean Soft Slate) -->
+  <aside class="presets-strip">
+    <div class="container presets-container">
+      <div class="presets-label">
+        <span>⚡ Quick Test Personas:</span>
+      </div>
+      <div class="presets-buttons">
+        <button class="preset-btn active" data-preset="excel_analyst">
+          <span>📊</span> Excel / MIS → Data Analyst
+        </button>
+        <button class="preset-btn" data-preset="supply_chain">
+          <span>📦</span> Supply Chain → SCM Analytics
+        </button>
+        <button class="preset-btn" data-preset="admin_ops">
+          <span>📑</span> Admin / EA → Operations Manager
+        </button>
+        <button class="preset-btn" data-preset="finance_pro">
+          <span>💰</span> Finance / Accounts → FP&amp;A
+        </button>
+        <button class="preset-btn" data-preset="powerpoint_pitch">
+          <span>🎨</span> PowerPoint → Product Marketing (PMM)
+        </button>
+        <button class="preset-btn" data-preset="custom">
+          <span>✨</span> Custom Assessment
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-pill">
+        <span>🛡️</span> AI Precision + Psychometric Science + Veteran Human Career Advisory
+      </div>
+      <h1 class="hero-title">
+        Not just another AI tool.<br>
+        <span class="gradient-text">A clinical roadmap for your next high-salary pivot.</span>
+      </h1>
+      <p class="hero-subtitle">
+        AI is automating routine tasks across Excel, Admin, Supply Chain, and Finance. We don’t just give you a generic chatbot response. We combine AI resume ingestion, rigorous behavioral psychometrics, and 1-on-1 human career consultant calls to map your highest-converting transition.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#diagnostic-section" class="btn btn-primary btn-lg">Start Free Diagnostic + Resume Scan →</a>
+        <a href="#pricing-section" class="btn btn-secondary btn-lg" style="margin-left: 12px;">Explore 3-Level Plans</a>
+      </div>
+
+      <div class="hero-stats-row">
+        <div class="hero-stat-item">
+          <span class="stat-num">Level 1: Free</span>
+          <span class="stat-label">5 Questions + Resume Scan</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="stat-num">Level 2: ₹1,999</span>
+          <span class="stat-label">Deep Psychometric Audit</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="stat-num">Level 3: ₹5,999</span>
+          <span class="stat-label">1:1 Senior Consultant Call</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Built for Full-Time Workers</span>
+        </div>
+      </div>
+
+      <!-- Active Persona Banner -->
+      <div id="preset-active-banner" class="preset-banner" style="display: none;"></div>
+    </div>
+  </section>
+
+  <!-- Main Interactive Diagnostic Wizard Section (Tier 1 Free Intake) -->
+  <section id="diagnostic-section" class="tool-section">
+    <div class="container">
+      
+      <div class="text-center" style="max-width: 720px; margin: 0 auto 36px;">
+        <span class="category-pill">Level 1 · Free AI Diagnostic</span>
+        <h2 style="font-size: 2rem; margin-bottom: 8px;">Upload Your Resume &amp; Answer 5 Rapid Questions</h2>
+        <p style="font-size: 0.95rem;">Our AI parser ingests your career timeline and matches your daily toolset with high-growth roles.</p>
+      </div>
+
+      <div class="tool-grid-layout">
+        
+        <!-- Left: Interactive Assessment Wizard -->
+        <div class="wizard-card">
+          
+          <!-- Resume Upload Zone -->
+          <div class="resume-upload-section" id="resume-upload-zone">
+            <input type="file" id="resume-file-input" style="display: none;" accept=".pdf,.doc,.docx,.txt">
+            <div class="resume-upload-icon">📄</div>
+            <div class="resume-upload-title">Drop your Resume here, or <span style="color: var(--emerald); text-decoration: underline;">Browse File</span></div>
+            <div class="resume-upload-hint">Supports PDF, DOCX (Max 10MB) · Instant skill &amp; timeline extraction</div>
+            
+            <div id="resume-parsed-container" style="display: none;"></div>
+          </div>
+
+          <div class="wizard-header">
+            <span id="step-indicator" class="step-badge">Question 1 of 5</span>
+            <div class="progress-track">
+              <div id="progress-bar-fill" class="progress-fill" style="width: 20%;"></div>
+            </div>
+          </div>
+
+          <!-- Question Content Container -->
+          <div id="question-flow">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+
+          <!-- Wizard Footer Controls -->
+          <div class="wizard-footer">
+            <button id="prev-step-btn" class="btn btn-secondary btn-sm" disabled>← Previous</button>
+            <button id="next-step-btn" class="btn btn-primary btn-sm">Next Question →</button>
+          </div>
+        </div>
+
+        <!-- Right: Live Telemetry & Alignment Barometer -->
+        <div class="telemetry-card">
+          <div class="telemetry-header">
+            <span class="telemetry-tag">Live Capability Telemetry</span>
+            <h3 class="telemetry-title">Transferable Dimension Signals</h3>
+          </div>
+
+          <!-- Live dynamic meters -->
+          <div id="live-dimensions-list">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+
+          <div class="telemetry-info-box">
+            <strong>💡 Hybrid Methodology:</strong> Level 1 gives you rapid AI direction. To get the comprehensive 10-dimension behavioral scorecard and 90-day plan, you can unlock the ₹1,999 Psychometric Audit or ₹5,999 1:1 Consultant Call below.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Phase 1 Instant Results Card -->
+      <div id="phase1-results-card" class="results-card" style="display: none;">
+        <div class="results-card-grid">
+          
+          <div class="score-dial-box">
+            <div class="score-dial-num" id="p1-alignment-score">92</div>
+            <div class="score-dial-denom">out of 100</div>
+            <div class="score-dial-label">Level 1 Directional Readout</div>
+          </div>
+
+          <div class="results-summary-content">
+            <span class="path-headline-tag" id="p1-path-category">Initial Alignment Direction</span>
+            <h2 class="path-headline-title" id="p1-primary-path">Data &amp; Business Intelligence Analyst</h2>
+            <div class="readiness-pill" id="p1-readiness">Level 1 Signal Ready · Direct 90-Day Pivot</div>
+            
+            <p class="insight-paragraph" id="p1-insight-text">
+              Your profile shows outstanding tool leverage and spreadsheet modeling logic. That represents 60% of what modern data analysts do. The remaining 40% is simply syntactical: replacing nested formulas with SQL queries, and static charts with dynamic Power BI/Tableau models.
+            </p>
+
+            <div class="mini-stats-row">
+              <div class="mini-stat">
+                <span class="mini-stat-label">Strongest Superpower</span>
+                <span class="mini-stat-val text-emerald" id="p1-top-dimension-name">Quantitative Rigor</span>
+                <span class="mini-stat-label">Score: <strong id="p1-top-dimension-score">94.0</strong></span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-label">Priority Growth Delta</span>
+                <span class="mini-stat-val text-amber" id="p1-growth-dimension-name">New Tech Agility</span>
+                <span class="mini-stat-label">Score: <strong id="p1-growth-dimension-score">66.0</strong></span>
+              </div>
+            </div>
+
+            <div class="results-actions">
+              <button id="unlock-phase2-btn" class="btn btn-primary btn-lg">
+                Explore Full 90-Day Transition Blueprint &amp; Report ↓
+              </button>
+              <button class="btn btn-amber btn-lg" style="margin-left: 10px;" onclick="openConsultantModal()">
+                Book 1:1 Consultant Strategy Call (₹5,999) 📞
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3-Tier Plans & Pricing Section (Crisp & White) -->
+  <section id="pricing-section" class="pricing-section">
+    <div class="container">
+      <div class="text-center" style="max-width: 760px; margin: 0 auto;">
+        <span class="category-pill">Transparent Investment</span>
+        <h2 style="font-size: 2.3rem; margin-bottom: 14px;">Choose Your Level of Transition Support</h2>
+        <p>From instant free AI exploration to clinically validated psychometrics and high-touch 1-on-1 human executive mentorship.</p>
+      </div>
+
+      <!-- 3 Tier Pricing Cards -->
+      <div id="pricing-tiers-grid" class="pricing-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Senior Career Consultants Section (Tier 3 Showcase) -->
+  <section id="consultants-section" class="consultants-section">
+    <div class="container">
+      <div class="text-center" style="max-width: 760px; margin: 0 auto;">
+        <span class="category-pill">Level 3 · Human Mentorship</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 14px;">Meet Your Senior Career Consultants</h2>
+        <p>No generic career counselors. Our mentors are former hiring directors and principal consultants from top tech and enterprise leaders who personally review your transition.</p>
+      </div>
+
+      <div id="consultants-cards-container" class="consultants-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Career Transition Report Deep Dive -->
+  <section id="full-report-anchor" class="report-section">
+    <div id="full-report-container" class="container" style="display: none;">
+      
+      <!-- Report Header Banner -->
+      <div class="report-header-banner">
+        <div>
+          <span class="hero-pill" style="margin-bottom: 8px;">Personalized Transition Blueprint</span>
+          <h2 style="font-size: 1.8rem;">Candidate Career Pivot Roadmap</h2>
+          <p>Candidate: <strong id="report-user-name" style="color: var(--emerald-dark);">Rohan M.</strong> · Overall Alignment: <strong id="report-alignment-index" style="color: var(--emerald);">92/100</strong></p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn btn-amber btn-sm" onclick="openConsultantModal()">📞 Book 1:1 Review Call</button>
+          <button id="print-report-btn" class="btn btn-secondary btn-sm">🖨️ Export / Print Report</button>
+        </div>
+      </div>
+
+      <!-- 3 Exploration Tracks Navigation (Rendered Dynamically by JS) -->
+      <div id="report-track-tabs-row" class="track-tabs-row">
+        <!-- Dynamically rendered based on vertical -->
+      </div>
+
+      <!-- Active Track Quick Summary Header -->
+      <div class="tab-pane-card mb-4" style="background: #FFFFFF;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <h2 id="track-title" style="font-size: 1.7rem;">Data &amp; Business Intelligence Analyst</h2>
+            <p id="track-subtitle" style="color: var(--emerald); font-weight: 700;">The natural evolution of the Excel Power-User</p>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 800;">Target Compensation</span>
+            <div id="track-salary-india" style="font-size: 1.6rem; font-weight: 800; color: var(--emerald-dark);">₹8.5 LPA - ₹16 LPA</div>
+            <div id="track-salary-entry" style="font-size: 0.88rem; color: var(--text-secondary);">$75,000 - $95,000 (US/Remote)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Report Section Sub-Tabs -->
+      <div class="subtabs-nav">
+        <button class="report-subtab-btn active" data-subtab="overview">Strategic Fit Overview</button>
+        <button class="report-subtab-btn" data-subtab="skill_bridge">The Skill Bridge Matrix</button>
+        <button class="report-subtab-btn" data-subtab="blueprint">90-Day Transition Blueprint</button>
+        <button class="report-subtab-btn" data-subtab="mentor_questions">Calibrated Mentor Questions</button>
+        <button class="report-subtab-btn" data-subtab="salary">Market Demand &amp; Comp</button>
+      </div>
+
+      <!-- Dynamic Tab Content Rendered by app.js -->
+      <div id="report-tab-dynamic-content">
+        <!-- Filled by JS -->
+      </div>
+
+      <!-- 10 Dimension Full Scorecard Section -->
+      <div class="mt-8">
+        <h3 style="font-size: 1.4rem; margin-bottom: 8px;">Your 10 Professional Dimension Scores</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary);">A calibrated breakdown of your work style, analytical rigor, and execution tendencies.</p>
+        <div id="report-dimension-grid" class="dimension-grid">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="tool-section" style="border-top: 1px solid var(--border-subtle); background: #FFFFFF;">
+    <div class="container">
+      <div class="text-center" style="max-width: 700px; margin: 0 auto 48px;">
+        <span class="category-pill">The 3-Level Architecture</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 16px;">How Pivot My Career Works</h2>
+        <p>Combining AI automation with psychological profiling and veteran human mentorship.</p>
+      </div>
+
+      <div class="grid-2-col" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="info-card">
+          <div style="font-size: 2.2rem; margin-bottom: 12px;">1️⃣</div>
+          <h4>Level 1: Free AI &amp; Resume Intake</h4>
+          <p>Upload your resume and answer 5 quick questions on your daily tooling and domain. Our AI extracts your core skills and generates an instant directional read.</p>
+          <span class="badge badge-accent mt-2">Free Forever</span>
+        </div>
+        <div class="info-card">
+          <div style="font-size: 2.2rem; margin-bottom: 12px;">2️⃣</div>
+          <h4>Level 2: Psychometric Assessment</h4>
+          <p>Take our 40-question behavioral psychometric test measuring ambiguity tolerance, decision speed, and execution grit to unlock your custom 7–8 page 90-day blueprint.</p>
+          <span class="badge badge-emerald mt-2">₹1,999 One-Time</span>
+        </div>
+        <div class="info-card">
+          <div style="font-size: 2.2rem; margin-bottom: 12px;">3️⃣</div>
+          <h4>Level 3: 1:1 Human Consultant Call</h4>
+          <p>Hop on a 60-minute confidential 1-on-1 strategy call with an industry hiring director to pressure-test your plan, rewrite your resume, and conduct interview prep.</p>
+          <span class="badge badge-amber mt-2">₹5,999 Complete Package</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Advisory Button -->
+  <button class="floating-advisory-btn" onclick="window.open('https://wa.me/918527960661?text=Hi,%20I%20am%20exploring%20a%20career%20pivot%20with%20Pivot%20My%20Career', '_blank')">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.043-2.07-.518-1.583-.642-2.607-2.22-2.686-2.325-.078-.106-.639-.851-.639-1.624 0-.772.404-1.154.548-1.309.144-.155.312-.194.417-.194.104 0 .208.002.299.006.096.004.225-.036.35.265.13.313.442 1.077.481 1.155.039.078.065.17.013.273-.052.105-.078.17-.156.26-.078.092-.163.205-.233.276-.078.079-.16.165-.069.321.091.156.405.669.869 1.082.597.532 1.101.698 1.257.776.157.078.248.069.339-.035.092-.104.391-.456.495-.612.105-.157.209-.131.352-.078.144.052.912.43 1.068.508.157.079.261.118.3.184.039.066.039.383-.105.788z"/>
+    </svg>
+    <span>Chat with Career Advisor</span>
+  </button>
+
+  <!-- Footer (Clean White with Soft Border) -->
+  <footer style="background: #FFFFFF; border-top: 1px solid var(--border-subtle); padding: 48px 0; margin-top: 80px; font-size: 0.88rem; color: var(--text-muted);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 8px;">
+          <div class="brand-icon" style="width: 28px; height: 28px; font-size: 0.9rem;">🧭</div>
+          <div class="brand-text" style="font-size: 1.05rem;">Pivot My<span>Career</span></div>
+        </div>
+        <p>© 2026 Pivot My Career. Clinical AI Precision · Psychometric Profiling · 1:1 Executive Advisory.</p>
+      </div>
+      <div style="display: flex; gap: 20px;">
+        <a href="#diagnostic-section" class="text-link">Free Diagnostic</a>
+        <a href="#pricing-section" class="text-link">Plans &amp; Pricing</a>
+        <a href="#consultants-section" class="text-link">Career Consultants</a>
+        <a href="https://wa.me/918527960661" class="text-link">WhatsApp Advisory</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts (Flat Folder Structure) -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
