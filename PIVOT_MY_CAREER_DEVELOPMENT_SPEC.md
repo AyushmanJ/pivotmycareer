@@ -2,7 +2,7 @@
 
 **Document Version:** 1.0.0  
 **Target Audience:** Full-Stack Developers, UI/UX Engineers, Backend Architects, QA Engineers, Product Managers  
-**Live Prototype Reference:** `http://localhost:8085`  
+**Live Prototype Reference:** `https://ayushmanj.github.io/pivotmycareer/`  
 **Brand Identity:** *Pivot My Career* (`pivotmycareer.ai`)  
 **Design Reference Aesthetic:** [Alison.com](https://alison.com/) (Crisp, clean, professional, soothing off-white and forest emerald green palette)
 
